@@ -4,14 +4,8 @@ static i2s_chan_handle_t rx_handle;
 
 void audio_in_init(void)
 {
-    // i2s_std_clk_config_t clk_config = I2S_STD_CLK_DEFAULT_CONFIG(44100);
-    // clk_config.mclk_multiple = I2S_MCLK_MULTIPLE_384;
-
     i2s_chan_config_t rx_chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_AUTO, I2S_ROLE_MASTER);
     ESP_ERROR_CHECK(i2s_new_channel(&rx_chan_cfg, NULL, &rx_handle));
-    // i2s_channel_reconfig_std_clock(rx_handle, &clk_config);
-
-    // i2s_std_set_clock(rx_handle, &clk_config);
 
     i2s_std_config_t rx_std_cfg= {
         .clk_cfg = {
