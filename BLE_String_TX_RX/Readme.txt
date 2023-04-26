@@ -1,0 +1,1 @@
+Only String Transmission and Reception
